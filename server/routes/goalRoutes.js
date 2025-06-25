@@ -1,12 +1,10 @@
 import {Router} from 'express';
+import { getGoals, createGoal } from '../controllers/goalController.js';
+import protect from '../middleware/authMiddleware.js'
 
 const router = Router();
 
-router.get('/', (req, res)=>{
-    res.json([
-        {id:1, title:"Learn React", description:"Complete React basics and projects"},
-        {id:2, title:"Build Portfolio", description:"Design and Deploy personal website"},
-    ])
-})
+router.get('/', protect, getGoals);
+router.post("/",protect, createGoal);
 
 export default router;

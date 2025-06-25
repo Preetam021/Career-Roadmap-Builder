@@ -24,20 +24,23 @@ const Dashboard = ()=>{
         fetchGoals();
     },[]);
 
-    const handleAddGoal = (e)=>{
+    const handleAddGoal = async(e)=>{
         e.preventDefault();
 
         if(!title.trim() || !description.trim()) return;
 
-        const newGoal = {
-            id: Date.now(),
-            title,
-            description
-        };
+        try {
+            const res = await api.post("/goals", {title, description});
+            setGoals([res.data, ...goals]);
+            setTitle("");
+            setDescription("");
+        } catch (error) {
+            console.error("Error adding goals:",error);
+            setError("Failed to add goal")
+            
+        }
 
-        setGoals((prev)=>[newGoal, ...prev]);
-        setTitle("");
-        setDescription("");
+        
     }
 
 
