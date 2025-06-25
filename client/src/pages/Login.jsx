@@ -11,6 +11,7 @@ const Login = ()=>{
             localStorage.setItem("token", res.data.token);
             alert("Login Successfull");
             navigate("/profile");
+            
         } catch (error) {
             alert(error.response?.data?.message || "Login Failed");
         }

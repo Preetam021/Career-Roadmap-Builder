@@ -9,7 +9,7 @@ const generateToken = (userId) => {
 
 // Register User
 const registerUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password} = req.body;
 
   try {
     const userExists = await User.findOne({ email });
@@ -22,7 +22,7 @@ const registerUser = async (req, res) => {
     const newUser = await User.create({
       name,
       email,
-      password: hashedPassword,
+      password: hashedPassword
     });
 
     const token = generateToken(newUser._id);
@@ -57,7 +57,7 @@ const loginUser = async (req, res) => {
 
     res.status(200).json({
       message: "Login successful",
-      token,
+      token
     });
 
   } catch (error) {
