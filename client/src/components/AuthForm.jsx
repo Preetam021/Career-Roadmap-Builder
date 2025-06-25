@@ -21,7 +21,7 @@ function AuthForm({ onSubmit, isLogin = false }) {
       <form onSubmit={handleSubmit} className="flex flex-col  justify-center items-center  w-70 p-7  gap-5">
         {!isLogin && (
           <input
-            className="border border-gray-600 py-1 px-2 rounded"
+            className="border border-gray-400 py-1 px-2 rounded text-white"
             type="text"
             name="name"
             placeholder="Name"
@@ -31,7 +31,7 @@ function AuthForm({ onSubmit, isLogin = false }) {
           />
         )}
         <input
-          className="border border-gray-600 py-1 px-2 rounded"
+          className="border border-gray-400 py-1 px-2 rounded text-white"
           type="email"
           name="email"
           placeholder="Email"
@@ -40,7 +40,7 @@ function AuthForm({ onSubmit, isLogin = false }) {
           required
         />
         <input
-          className="border border-gray-600 py-1 px-2 rounded"
+          className="border border-gray-400 py-1 px-2 rounded text-white"
           type="password"
           name="password"
           placeholder="Password"
@@ -49,7 +49,7 @@ function AuthForm({ onSubmit, isLogin = false }) {
           required
         />
         <button 
-          className="bg-blue-800 px-4 py-1 flex justify-center items-center rounded-sm text-gray-300 hover:bg-blue-500"
+          className="bg-blue-800 px-4 py-1 flex justify-center items-center rounded-md  text-blue-300 hover:bg-blue-700"
           type="submit">{isLogin ? "Login" : "Register"}</button>
       </form>
     </div>

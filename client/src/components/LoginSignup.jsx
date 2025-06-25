@@ -22,7 +22,7 @@ function LoginSignup({ auth }) {
       const res = await api.post("/users/login", data);
       localStorage.setItem("token", res.data.token);
       alert("Login Successfull");
-      navigate("/profile");
+      navigate("/dashboard");
     } catch (error) {
       alert(error.response?.data?.message || "Login Failed");
     }
@@ -37,7 +37,7 @@ function LoginSignup({ auth }) {
           <div className="flex flex-col justify-center items-center border border-gray-600 px-5 py-8 rounded-lg backdrop-blur-sm bg-white/10">
             <h2 className="text-3xl text-white pb-2">{auth === "register" ?"Register":"Login"}</h2>
             <AuthForm onSubmit={auth === "register"? handleRegister:handleLogin} isLogin={auth === "register"? false:true} />
-            {auth === "register"? "":<p className="text-sm text-white">
+            {auth === "register"? " ":<p className="text-sm text-white">
               Don't have an account?{" "}
               <Link
                 to="/register"

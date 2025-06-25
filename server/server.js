@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { connectDB } from './config/db.js';
 import userRoutes from './routes/userRoutes.js'
+import goalRoutes from './routes/goalRoutes.js'
 
 dotenv.config()// it is use because the process.env can access the .env data eaisly
 
@@ -19,6 +20,7 @@ app.get('/', (req, res) =>{//it is a test route
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/goals', goalRoutes);
 
 const PORT = process.env.PORT || 5000;
 
