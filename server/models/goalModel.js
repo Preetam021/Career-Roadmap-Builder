@@ -14,6 +14,10 @@ const goalSchema = new mongoose.Schema(
         description:{
             type:String,
         },
+        completed: {
+            type:Boolean,
+            default: false,
+        }
     },{timestamps:true}
 )
 
