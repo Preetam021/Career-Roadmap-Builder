@@ -4,6 +4,7 @@ import Register from "./pages/Register"
 import Profile from "./pages/Profile";
 import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
+import CareerWizard from "./pages/CareerWizard";
 
 
 function App() {
@@ -21,6 +22,11 @@ function App() {
       <Route path="/dashboard" element={
         <PrivateRoute>
           <Dashboard />
+        </PrivateRoute> 
+        } />
+      <Route path="/wizard" element={
+        <PrivateRoute>
+          <CareerWizard />
         </PrivateRoute> 
         } />
     </Routes>
